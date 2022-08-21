@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { FormEvent, useEffect, useState } from 'react';
 import axios from 'axios';
 import { Footer, Container } from './styled';
 import diceSvg from '../../assets/images/icon-dice.svg';
 
 export default function Advice() {
+  console.log('Carregou');
+
   interface AdviceSlip {
     slip: {
       advice: string;
@@ -13,26 +15,34 @@ export default function Advice() {
 
   const [slip, setSlip] = useState('');
 
-  async function getAdvice(): Promise<void> {
+  async function handleSubmit(event?: FormEvent): Promise<void> {
+    event?.preventDefault();
     try {
       const { data } = await axios.get<AdviceSlip>(
-        'https://api.adviceslip.com/advice',
+        `https://api.adviceslip.com/advice`,
       );
+
       setSlip(data.slip.advice);
     } catch (err) {
       console.log(err);
     }
   }
 
+  useEffect(() => {
+    handleSubmit();
+  }, []);
+
   return (
     <>
       <Container>
-        <h1> Advice# </h1>
-        <h2>{slip}</h2>
+        <form onSubmit={(e) => handleSubmit(e)}>
+          <h1> Advice# </h1>
+          <h2>{slip}</h2>
 
-        <button onClick={getAdvice}>
-          <img src={diceSvg} alt="Dice" />
-        </button>
+          <button type="submit">
+            <img src={diceSvg} alt="Dice" />
+          </button>
+        </form>
       </Container>
       <Footer>
         Challenge by
