@@ -1,11 +1,10 @@
 import React, { FormEvent, useEffect, useState } from 'react';
 import axios from 'axios';
-import { Footer, Container } from './styled';
+import { Footer, Container, DividerImg, DiceImg, DiceButton } from './styled';
 import diceSvg from '../../assets/images/icon-dice.svg';
+import dividerDesktop from '../../assets/images/pattern-divider-desktop.svg';
 
 export default function Advice() {
-  console.log('Carregou');
-
   interface AdviceSlip {
     slip: {
       advice: string;
@@ -14,6 +13,7 @@ export default function Advice() {
   }
 
   const [slip, setSlip] = useState('');
+  const [id, setID] = useState<number>();
 
   async function handleSubmit(event?: FormEvent): Promise<void> {
     event?.preventDefault();
@@ -23,28 +23,45 @@ export default function Advice() {
       );
 
       setSlip(data.slip.advice);
+      setID(data.slip.id);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  async function adviceTest(): Promise<void> {
+    try {
+      const { data } = await axios.get<AdviceSlip>(
+        `https://api.adviceslip.com/advice/${117}`,
+      );
+
+      setSlip(data.slip.advice);
+      setID(data.slip.id);
     } catch (err) {
       console.log(err);
     }
   }
 
   useEffect(() => {
-    handleSubmit();
+    adviceTest();
   }, []);
 
   return (
     <>
       <Container>
         <form onSubmit={(e) => handleSubmit(e)}>
-          <h1> Advice# </h1>
+          <h1> ADVICE # {id} </h1>
           <h2>{slip}</h2>
 
-          <button type="submit">
-            <img src={diceSvg} alt="Dice" />
-          </button>
+          <DividerImg src={dividerDesktop} alt="Divider" />
+
+          <DiceButton type="submit">
+            <DiceImg src={diceSvg} alt="Dice" />
+          </DiceButton>
         </form>
       </Container>
-      <Footer>
+
+      <Footer style={{ display: 'none' }}>
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
           Frontend Mentor

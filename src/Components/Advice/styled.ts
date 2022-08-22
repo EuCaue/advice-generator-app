@@ -3,23 +3,77 @@ import styled from 'styled-components';
 import * as colors from '../../assets/styles/configColors/colors';
 
 export const Container = styled.section`
-  background-color: ${colors.grayishBlue};
+  -webkit-box-shadow: 0px 6px 36px -5px rgba(0, 0, 0, 0.77);
+  -moz-box-shadow: 0px 6px 36px -5px rgba(0, 0, 0, 0.77);
+  box-shadow: 0px 6px 36px -5px rgba(0, 0, 0, 0.77);
+  background-color: ${colors.darkGrayishBlue};
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 60%;
+  width: 39%;
   height: 50%;
   margin: auto;
+  border-radius: 15px;
+  margin-top: 10%;
 
   h1 {
-    display: flex;
-    font-size: 15px;
+    letter-spacing: 4px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: ${colors.neonGreen};
+  }
+
+  h2 {
+    color: ${colors.lightCyan};
+    padding: 10px;
+    :after {
+      content: '"';
+    }
+
+    ::before {
+      content: '"';
+    }
   }
 `;
 
+export const DividerImg = styled.img`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 20px;
+`;
+
+export const DiceImg = styled.img`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  color: ${colors.neonGreen};
+  background-color: ${colors.neonGreen};
+  border: none;
+  width: 25px;
+  height: 25px;
+`;
+
+export const DiceButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  background-color: ${colors.neonGreen};
+  width: 75px;
+  height: 75px;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  right: 48.2%;
+  top: 68%;
+  cursor: pointer;
+`;
+
 export const Footer = styled.footer`
-  background: ${colors.darkGrayishBlue};
   text-align: center;
   display: flex;
   justify-content: center;
@@ -32,15 +86,15 @@ export const Footer = styled.footer`
     font-weight: 600;
     font-size: 1.1em;
     :link {
-      color: ${colors.darkGrayishBlue};
-    }
-
-    :visited {
       color: ${colors.neonGreen};
     }
 
+    :visited {
+      color: ${colors.grayishBlue};
+    }
+
     :active {
-      color: ${colors.darkBlue};
+      color: ${colors.neonGreen};
     }
   }
 `;
