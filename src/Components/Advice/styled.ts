@@ -71,8 +71,8 @@ export const DiceButton = styled.button`
   height: 2em;
   border: none;
   border-radius: 50%;
-  position: absolute;
-  bottom: 7.5em;
+  position: relative;
+  top: 3em;
 
   cursor: pointer;
 `;
