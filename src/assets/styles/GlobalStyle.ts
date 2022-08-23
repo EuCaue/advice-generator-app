@@ -6,7 +6,7 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 28px;
+    font-size: 26px;
     font-family: 'Manrope', sans-serif;
     font-weight: 800;
 }

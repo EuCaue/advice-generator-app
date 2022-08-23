@@ -32,7 +32,7 @@ export default function Advice() {
   async function adviceTest(): Promise<void> {
     try {
       const { data } = await axios.get<AdviceSlip>(
-        `https://api.adviceslip.com/advice/${117}`,
+        `https://api.adviceslip.com/advice/${41}`,
       );
 
       setSlip(data.slip.advice);
@@ -51,7 +51,7 @@ export default function Advice() {
       <Container>
         <form onSubmit={(e) => handleSubmit(e)}>
           <h1> ADVICE # {id} </h1>
-          <h2>{slip}</h2>
+          <h2>{`\u{201C} ${slip}\u{201D}`}</h2>
 
           <DividerImg src={dividerDesktop} alt="Divider" />
 

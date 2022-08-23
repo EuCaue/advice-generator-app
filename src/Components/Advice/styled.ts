@@ -11,29 +11,33 @@ export const Container = styled.section`
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 39%;
-  height: 50%;
+  width: 19em;
+  height: 12.7em;
   margin: auto;
   border-radius: 15px;
   margin-top: 10%;
 
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: -1em;
+    width: 100%;
+  }
+
   h1 {
     letter-spacing: 4px;
     font-size: 14px;
-    margin-bottom: 20px;
+    padding: 15px;
+    padding-top: 0px;
     color: ${colors.neonGreen};
   }
 
   h2 {
     color: ${colors.lightCyan};
     padding: 10px;
-    :after {
-      content: '"';
-    }
-
-    ::before {
-      content: '"';
-    }
+    /* width: fit-content; */
   }
 `;
 
@@ -63,13 +67,13 @@ export const DiceButton = styled.button`
   justify-content: center;
   margin: auto;
   background-color: ${colors.neonGreen};
-  width: 75px;
-  height: 75px;
+  width: 2em;
+  height: 2em;
   border: none;
   border-radius: 50%;
   position: absolute;
-  right: 48.2%;
-  top: 68%;
+  bottom: 7.5em;
+
   cursor: pointer;
 `;
 
