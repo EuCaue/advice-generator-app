@@ -11,19 +11,20 @@ export const Container = styled.section`
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 19em;
-  height: 12.7em;
+  width: 20em;
+  height: 12em;
   margin: auto;
   border-radius: 15px;
   margin-top: 10%;
 
   form {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: -1em;
-    width: 100%;
+    margin: auto;
+    padding: 10px;
   }
 
   h1 {
@@ -35,9 +36,9 @@ export const Container = styled.section`
   }
 
   h2 {
+    height: 130px;
     color: ${colors.lightCyan};
     padding: 10px;
-    /* width: fit-content; */
   }
 `;
 
@@ -45,8 +46,7 @@ export const DividerImg = styled.img`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: auto;
-  margin-top: 20px;
+  transform: translateY(250%);
 `;
 
 export const DiceImg = styled.img`
@@ -54,9 +54,7 @@ export const DiceImg = styled.img`
   align-items: center;
   justify-content: center;
   margin: auto;
-  color: ${colors.neonGreen};
-  background-color: ${colors.neonGreen};
-  border: none;
+  padding: 5%;
   width: 25px;
   height: 25px;
 `;
@@ -65,16 +63,13 @@ export const DiceButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: auto;
   background-color: ${colors.neonGreen};
   width: 2em;
   height: 2em;
   border: none;
   border-radius: 50%;
-  position: relative;
-  top: 3em;
-
   cursor: pointer;
+  transform: translateY(130%);
 `;
 
 export const Footer = styled.footer`

@@ -32,10 +32,12 @@ export default function Advice() {
   async function adviceTest(): Promise<void> {
     try {
       const { data } = await axios.get<AdviceSlip>(
-        `https://api.adviceslip.com/advice/${41}`,
+        `https://api.adviceslip.com/advice/${66}`,
       );
 
       setSlip(data.slip.advice);
+      console.log();
+
       setID(data.slip.id);
     } catch (err) {
       console.log(err);
@@ -58,6 +60,7 @@ export default function Advice() {
           <DiceButton type="submit">
             <DiceImg src={diceSvg} alt="Dice" />
           </DiceButton>
+          <div></div>
         </form>
       </Container>
 
