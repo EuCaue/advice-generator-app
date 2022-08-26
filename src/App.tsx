@@ -1,6 +1,6 @@
 import React from 'react';
 import GlobalStyle from './assets/styles/GlobalStyle';
-import Advice from './Components/Advice';
+import Advice from './pages/Advice';
 
 function App() {
   return (
