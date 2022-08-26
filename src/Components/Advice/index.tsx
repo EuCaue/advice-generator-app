@@ -15,6 +15,7 @@ export default function Advice() {
   const [slip, setSlip] = useState('');
   const [id, setID] = useState<number>();
 
+  // Function no get a random advice on the API
   async function handleSubmit(event?: FormEvent): Promise<void> {
     event?.preventDefault();
     try {
@@ -29,14 +30,14 @@ export default function Advice() {
     }
   }
 
-  async function adviceTest(): Promise<void> {
+  // The default/first advice load on the site
+  async function adviceDefault(): Promise<void> {
     try {
       const { data } = await axios.get<AdviceSlip>(
         `https://api.adviceslip.com/advice/${66}`,
       );
 
       setSlip(data.slip.advice);
-      console.log();
 
       setID(data.slip.id);
     } catch (err) {
@@ -45,7 +46,7 @@ export default function Advice() {
   }
 
   useEffect(() => {
-    adviceTest();
+    adviceDefault();
   }, []);
 
   return (
