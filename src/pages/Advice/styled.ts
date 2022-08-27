@@ -75,6 +75,7 @@ export const Container = styled.section`
     color: ${colors.lightCyan};
     padding: 10px;
   }
+
   /* Media Queries */
   @media only screen and (max-width: 40em) {
     width: 15.4em;
@@ -91,6 +92,46 @@ export const Container = styled.section`
 
     ${DiceButton} {
       transform: translateY(230%);
+    }
+  }
+
+  @media screen and (max-width: 25em) {
+    width: 13.5em;
+
+    h2 {
+      font-size: 24px;
+    }
+
+    ${DividerImg} {
+      width: 12em;
+      transform: translateY(3.5em);
+    }
+
+    ${DiceButton} {
+      transform: translateY(250%);
+    }
+  }
+
+  @media screen and (max-width: 20em) {
+    width: 11em;
+    height: 12.4em;
+
+    ${DividerImg} {
+      width: 10.3em;
+      transform: translateY(3.7em);
+    }
+
+    h1 {
+      font-size: 13px;
+    }
+
+    h2 {
+      font-size: 23px;
+      padding: 0;
+    }
+
+    ${DiceButton} {
+      transform: translateY(220%);
     }
   }
 `;
