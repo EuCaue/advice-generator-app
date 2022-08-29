@@ -72,12 +72,12 @@ export default function Advice() {
         </form>
       </Container>
 
-      <Footer style={{ display: 'none' }}>
+      <Footer>
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
           Frontend Mentor
         </a>
-        . Coded by
+        Coded by
         <a
           href="https://github.com/EuCaue"
           target="_blank"
